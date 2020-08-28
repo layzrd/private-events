@@ -1,0 +1,7 @@
+<h1>Session#new</h1>
+<p>Find me in app/views/session/new.html.erb</p>
+<form action="/session/create" method = "post" >
+  <input type="text" name="username" >
+  <button type="submit"> Sign In </button>
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+</form>
