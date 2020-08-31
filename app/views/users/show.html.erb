@@ -1,43 +1,30 @@
 <p id="notice"><%= notice %></p>
-
 <p>
   <strong>Username:</strong>
   <%= @user.username %>
 </p>
-
 <p>
   <strong>Name:</strong>
   <%= @user.name %>
 </p>
-
 <%= link_to 'Back', users_path %>
-
 <h2>Hosted</h2>
 <ul>
   <% @user.my_events.each do |event| %>
     <li><%= event.description %> on <%= event.updated_at.to_s(:short) %></li>
   <% end %>
 </ul>
-
 <h2>Participated</h2>
-
 <ul>
   <% @user.attended_event.each do |event| %>
     <li> <%= event.description %> on <%= event.updated_at.to_s(:short) %> </li>
   <% end %>
 </ul>
-
-
-
-
-
 <h2>Upcoming</h2>
 <ul>
   <%= @upcoming_events.each { |event| "<li>#{event}</li>" } %>
 </ul>
-
 <h2>Participated</h2>
 <ul>
   <%= @previously_attended_events.each { |event| "<li>#{event}</li>" } %>
 </ul>
-

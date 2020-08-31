@@ -4,12 +4,20 @@
     <title>PrivateEvents</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
-
   <body>
+    <ul>
+      <% if signed_in? %>
+        <%= link_to 'events', events_path %>
+        <%= link_to 'users', users_path %>
+        <%= link_to 'log out', session_destroy_path %>
+      <% else %>
+        <%= link_to 'sign up', new_user_path %>
+        <%= link_to 'login', session_new_path %>
+      <% end %>
+    </ul>
     <%= yield %>
   </body>
 </html>
