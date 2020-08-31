@@ -11,3 +11,18 @@
 </p>
 
 <%= link_to 'Back', users_path %>
+
+<h2>Hosted</h2>
+<ul>
+  <% @user.my_events.each do |event| %>
+    <li><%= event.description %> on <%= event.updated_at.to_s(:short) %></li>
+  <% end %>
+</ul>
+
+<h2>Participated</h2>
+
+<ul>
+  <% @user.attended_event.each do |event| %>
+    <li> <%= event.description %> on <%= event.updated_at.to_s(:short) %> </li>
+  <% end %>
+</ul>
