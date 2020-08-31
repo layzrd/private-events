@@ -12,7 +12,8 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-    @my_events = Event.where(user_id: params[:id])
+    @upcoming_events = User.upcoming_events
+    @previously_attended_events = User.previously_attended_events
   end
 
   # GET /users/new

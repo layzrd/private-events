@@ -26,3 +26,18 @@
     <li> <%= event.description %> on <%= event.updated_at.to_s(:short) %> </li>
   <% end %>
 </ul>
+
+
+
+
+
+<h2>Upcoming</h2>
+<ul>
+  <%= @upcoming_events.each { |event| "<li>#{event}</li>" } %>
+</ul>
+
+<h2>Participated</h2>
+<ul>
+  <%= @previously_attended_events.each { |event| "<li>#{event}</li>" } %>
+</ul>
+
