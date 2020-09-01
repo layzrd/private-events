@@ -43,4 +43,5 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+  Capybara.default_driver = :selenium_chrome
 end
