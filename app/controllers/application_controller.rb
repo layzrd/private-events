@@ -11,5 +11,8 @@ class ApplicationController < ActionController::Base
     false
   end
 
+  def destroy
+  end
+
   helper_method :current_user, :signed_in?
 end
