@@ -42,8 +42,13 @@ group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'database_cleaner'
+<<<<<<< HEAD
   gem 'rails-controller-testing'
   gem 'rspec-rails'
+=======
+  gem 'rspec-rails'
+  gem 'webdrivers'
+>>>>>>> d4db8990e4a6400244dc098b642f7011b7f46017
 end
 
 group :development do

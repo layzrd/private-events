@@ -1,5 +1,8 @@
+<<<<<<< HEAD
 # frozen_string_literal: true
 
+=======
+>>>>>>> d4db8990e4a6400244dc098b642f7011b7f46017
 ENV['RAILS_ENV'] ||= 'test'
 require File.expand_path('../config/environment', __dir__)
 abort('The Rails environment is running in production mode!') if Rails.env.production?
@@ -45,4 +48,8 @@ RSpec.configure do |config|
   config.after(:each) do
     DatabaseCleaner.clean
   end
+<<<<<<< HEAD
+=======
+  Capybara.default_driver = :selenium_chrome
+>>>>>>> d4db8990e4a6400244dc098b642f7011b7f46017
 end
