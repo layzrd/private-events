@@ -75,11 +75,4 @@ class EventsController < ApplicationController
   def event_params
     params.require(:event).permit(:event_date, :location, :description, :attendee)
   end
-
-  def authenticated?
-    return if signed_in?
-
-    flash[:error] = 'Please login first'
-    redirect_to session_new_path
-  end
 end

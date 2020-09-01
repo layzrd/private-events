@@ -11,5 +11,12 @@ class ApplicationController < ActionController::Base
     false
   end
 
-  helper_method :current_user, :signed_in?
+  def authenticated?
+    return if signed_in?
+
+    flash[:error] = 'Please login first'
+    redirect_to session_new_path
+  end
+
+  helper_method :current_user, :signed_in?, :authenticated?
 end
