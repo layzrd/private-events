@@ -5,9 +5,13 @@
 ## Code execution view:
 
 ![screenshot](./app/assets/images/form-ui.png)
+
 ![screenshot](./app/assets/images/new_event.png)
+
 ![screenshot](./app/assets/images/sign_up.png)
+
 ![screenshot](./app/assets/images/log_in.png)
+
 ![screenshot](./app/assets/images/users.png)
 
 ## Built With
