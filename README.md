@@ -1,10 +1,14 @@
 # Private-Events project
 
-> In this project we created the sign up form, the posts page and the user authentication permissions to see the users that created a certain post.
+> In this project we created the sign up, sign in, events and users forms and views in order to display events created by certain user as well as attendees to the events. They are divided between past and future events.
 
 ## Code execution view:
 
 ![screenshot](./app/assets/images/form-ui.png)
+![screenshot](./app/assets/images/new_event.png)
+![screenshot](./app/assets/images/sign_up.png)
+![screenshot](./app/assets/images/log_in.png)
+![screenshot](./app/assets/images/users.png)
 
 ## Built With
 
@@ -41,7 +45,7 @@ To get a local copy up and running follow these simple example steps:
 
 Contributions, issues and feature requests are welcome!
 
-Feel free to check the [issues page](https://github.com/e71az/members-only/issues).
+Feel free to check the [issues page](https://github.com/e71az/private-events/issues).
 
 ## Show your support
 
