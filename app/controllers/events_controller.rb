@@ -13,6 +13,7 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
+    @user_options = User.all.map { |u| [ u.name, u.id ] }
     @event = Event.new
   end
 
