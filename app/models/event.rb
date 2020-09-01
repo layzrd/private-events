@@ -7,5 +7,5 @@ class Event < ApplicationRecord
   has_many :user_events
   has_many :attendee, through: :user_events, source: :user
 
-  # def self.past; end
+  # def self.past; enwd
 end

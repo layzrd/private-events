@@ -28,10 +28,10 @@
 
   <div class="field">
     <%= form.label :attendee %>
-    <%= form.select(:attendee, @user_options) %>
+    <%= form.select(:attendee, @user_options,
+        { :prompt => "Please select"},
+        { :multiple => true, :size => 5 }) %>
   </div>
-
-
 
   <div class="actions">
     <%= form.submit %>
