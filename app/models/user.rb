@@ -6,6 +6,8 @@ class User < ApplicationRecord
   has_many :my_events, class_name: 'Event'
   has_many :user_events
   has_many :attended_event, through: :user_events, source: :event
+  validates :name, presence: true
+  validates :username, presence: true
 
   def self.upcoming_events
     join_event.where('event_date >= ?', Date.today.to_s(:db)).select_specific_fields
