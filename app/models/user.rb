@@ -1,5 +1,3 @@
-# frozen_string_literal: true
-
 class User < ApplicationRecord
   scope :select_specific_fields, -> { pluck('users.name, events.location, events.description, events.event_date') }
   scope :join_event, -> { joins(user_events: :event) }
