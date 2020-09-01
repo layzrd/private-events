@@ -1,4 +1,7 @@
+# frozen_string_literal: true
+
 class EventsController < ApplicationController
+  before_action :authenticated?
   before_action :set_event, only: %i[show edit update destroy]
 
   # GET /events
@@ -71,5 +74,12 @@ class EventsController < ApplicationController
   # Only allow a list of trusted parameters through.
   def event_params
     params.require(:event).permit(:event_date, :location, :description, :attendee)
+  end
+
+  def authenticated?
+    return if signed_in?
+
+    flash[:error] = 'Please login first'
+    redirect_to session_new_path
   end
 end
