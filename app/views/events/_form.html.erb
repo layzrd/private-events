@@ -26,6 +26,13 @@
     <%= form.text_area :description %>
   </div>
 
+  <div class="field">
+    <%= form.label :attendee %>
+    <%= form.select(:attendee, @user_options) %>
+  </div>
+
+
+
   <div class="actions">
     <%= form.submit %>
   </div>
