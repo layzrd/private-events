@@ -1,38 +1,16 @@
 <h1>Events</h1>
-<h2>Future</h2>
-<ul>
-  <% @future_events.each do |event| %>
-    <li>
-      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
-      <%= link_to 'Show', event %></li>
-  <% end %>
-</ul>
-<h2>Past Events</h2>
-<ul>
-  <% @past_events.each do |event| %>
-    <li>
-      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
-      <%= link_to 'Show', event %>
-    </li>
-  <% end %>
-</ul>
-<br>
 <h2>My Past Events</h2>
-<ul>
-  <% @my_past.each do |event| %>
-    <li>
-      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
-      <%= link_to 'Show', event %>
-    </li>
-  <% end %>
-</ul>
+<%= list_events(@my_past) %>
+
 <h2>My Upcoming Events</h2>
-<ul>
-  <% @my_upcoming.each do |event| %>
-    <li>
-      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
-      <%= link_to 'Show', event %>
-    </li>
-  <% end %>
-</ul>
+<%= list_events(@my_upcoming) %>
+<br/>
+
+<h2>Future</h2>
+<%= list_events(@future_events) %>
+
+<h2>Past Events</h2>
+<%= list_events(@past_events) %>
+<br>
+
 <%= link_to 'New Event', new_event_path %>

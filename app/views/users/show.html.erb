@@ -11,9 +11,7 @@
 <ul>
   <li><h2>Hosted</h2></li>
   <ol>
-    <% @user.my_events.each do |event| %>
-      <li><%= event.description %> on <%= event.updated_at.to_s(:short) %></li>
-    <% end %>
+    <%= list_events(@user.my_events) %>
   </ol>
   <li><h2>Participated</h2></li>
   <ul>
