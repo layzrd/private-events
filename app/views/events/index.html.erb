@@ -1,15 +1,19 @@
-<p id="notice"><%= notice %></p>
 <h1>Events</h1>
 <h2>Future</h2>
 <ul>
   <% @future_events.each do |event| %>
-    <li><%= event.description %> on <%= event.updated_at.to_s(:short) %></li>
+    <li>
+      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
+      <%= link_to 'Show', event %></li>
   <% end %>
 </ul>
 <h2>Past Events</h2>
 <ul>
   <% @past_events.each do |event| %>
-    <li> <%= event.description %> on <%= event.updated_at.to_s(:short) %> </li>
+    <li>
+      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
+      <%= link_to 'Show', event %>
+    </li>
   <% end %>
 </ul>
 <br>
