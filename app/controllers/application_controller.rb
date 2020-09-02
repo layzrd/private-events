@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   end
 
   def signed_in?
-    return true if session[:user_id]
+    return true if session[:user]
 
     false
   end
