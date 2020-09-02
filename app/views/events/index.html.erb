@@ -17,4 +17,22 @@
   <% end %>
 </ul>
 <br>
+<h2>My Past Events</h2>
+<ul>
+  <% @my_past.each do |event| %>
+    <li>
+      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
+      <%= link_to 'Show', event %>
+    </li>
+  <% end %>
+</ul>
+<h2>My Upcoming Events</h2>
+<ul>
+  <% @my_upcoming.each do |event| %>
+    <li>
+      <%= event.description %> on <%= event.updated_at.to_s(:short) %>
+      <%= link_to 'Show', event %>
+    </li>
+  <% end %>
+</ul>
 <%= link_to 'New Event', new_event_path %>
