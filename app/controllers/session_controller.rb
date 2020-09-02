@@ -9,7 +9,8 @@ class SessionController < ApplicationController
     end
     @user = User.find_by(username: params[:username])
     if @user
-      session[:user_id] = @user.id
+      session[:user] = @user.id
+      session[:user] = @user
       redirect_to users_path
     else
       flash[:alert] = 'the given username is not exist.'
@@ -18,6 +19,7 @@ class SessionController < ApplicationController
   end
 
   def destroy
+    session[:user] = nil
     session[:user_id] = nil
     redirect_to session_new_path
   end

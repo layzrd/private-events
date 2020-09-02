@@ -2,11 +2,11 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    User.where(id: session[:user_id]).first if session[:user_id]
+    session[:user] if session[:user]
   end
 
   def signed_in?
-    return true if current_user&.id
+    return true if session[:user_id]
 
     false
   end
