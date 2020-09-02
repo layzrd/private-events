@@ -2,7 +2,7 @@ class SessionController < ApplicationController
   def new; end
 
   def create
-    if params.has_key?(:username).present?
+    unless params[:username].present?
       flash[:alert] = 'Please provide username.'
       redirect_to session_new_path
       return

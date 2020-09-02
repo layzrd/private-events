@@ -1,6 +1,7 @@
 <h1>Login</h1>
-<form action="<%= session_create_path %>" method = "post" >
-  <input type="text" name="username" >
-  <button type="submit"> Sign In </button>
-  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
-</form>
+<%= form_with method: 'post', url: session_create_path, local: true do |form| %>
+  <%= form.label :username %>
+  <%= form.text_field :username %>
+  <%= form.submit 'Sign In' %>
+<% end %>
+  
