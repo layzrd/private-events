@@ -10,7 +10,7 @@ class User < ApplicationRecord
   has_many :attended_event, through: :user_events, source: :event
 
   def self.upcoming_events(user_id)
-     join_event.where("event_date >= ? AND users.id = ?", Date.today.to_s(:db), user_id).select_specific_fields
+    join_event.where("event_date >= ? AND users.id = ?", Date.today.to_s(:db), user_id).select_specific_fields
   end
 
   def self.previously_attended_events user_id
