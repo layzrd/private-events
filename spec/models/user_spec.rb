@@ -11,15 +11,15 @@ RSpec.describe User, type: :model do
   end
 
   context 'User validations' do
-    it "is not valid without a name" do
+    it 'is not valid without a name' do
       expect(User.new(username: 'user1')).to_not be_valid
     end
 
-    it "is not valid without a username" do
+    it 'is not valid without a username' do
       expect(User.new(name: 'User One')).to_not be_valid
     end
 
-    it "is valid with valid attributes" do
+    it 'is valid with valid attributes' do
       expect(User.new(username: 'user1', name: 'User One')).to be_valid
     end
   end

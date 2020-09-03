@@ -1,6 +1,6 @@
-module SpecTestHelper   
+module SpecTestHelper
   def login(user)
-    user = User.where(:username => username).first if user.is_a?(String)
+    user = User.where(username: username).first if user.is_a?(String)
     request.session[:user] = user
   end
 
