@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
-  before:each do
+  before :each do
     login('recca')
   end
   context 'GET index' do

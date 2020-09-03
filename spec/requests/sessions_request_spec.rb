@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe SessionController, type: :controller do
-  before:each do
+  before :each do
     login('recca')
   end
   it 'should redirect to login page' do
