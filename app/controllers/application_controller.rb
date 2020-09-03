@@ -2,7 +2,7 @@ class ApplicationController < ActionController::Base
   private
 
   def current_user
-    session[:user] if session[:user]
+    session[:user]
   end
 
   def signed_in?

@@ -15,14 +15,14 @@
  */
 
 .flash {
-    color: #fff;
-    padding: 1rem;
+  color: #fff;
+  padding: 1rem;
 }
 
 .alert {
-    background-color: #730E15;
+  background-color: #730e15;
 }
 
 .info {
-    background-color: #298eae;
+  background-color: #298eae;
 }
