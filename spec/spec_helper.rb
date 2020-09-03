@@ -15,6 +15,7 @@ require 'support/spec_test_helper'
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
+  config.include SpecTestHelper, :type => :controller
   # rspec-expectations config goe s here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest
   # assertions if you prefer.

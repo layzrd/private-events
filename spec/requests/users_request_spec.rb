@@ -1,6 +1,9 @@
 require 'rails_helper'
 
 RSpec.describe UsersController, type: :controller do
+  before:each do
+    login('recca')
+  end
   context 'GET index' do
     it 'should repsonse OK http ststus' do
       get :index
@@ -8,7 +11,7 @@ RSpec.describe UsersController, type: :controller do
     end
 
     it 'assigns @users' do
-      user = User.create
+      user = User.create(username: 'user1', name: 'User One')
       get :index
       expect(assigns(:users)).to eq([user])
     end
