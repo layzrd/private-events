@@ -24,12 +24,13 @@ module ApplicationHelper
 
   def conditional_link(cond, link)
     return unless cond
+
     if link.is_a?(Array)
-        link.each do |l|
-            concat link_to l[:lbl], l[:path], method: l[:mtd]
-        end
+      link.each do |l|
+        concat link_to l[:lbl], l[:path], method: l[:mtd]
+      end
     else
-        link_to link[:lbl], link[:path]
+      link_to link[:lbl], link[:path]
     end
   end
 
@@ -56,9 +57,10 @@ module ApplicationHelper
 
   def error_view(errors)
     return unless errors.any?
+
     concat content_tag(:div,
-                         content_tag(:h2,
-                                     "#{pluralize(errors.count, 'error')}
+                       content_tag(:h2,
+                                   "#{pluralize(errors.count, 'error')}
                                     prohibited this user from being saved:"))
     conditional_view(errors.full_messages)
   end
