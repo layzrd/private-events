@@ -10,11 +10,8 @@
   <%= @event.description %>
 </p>
 
-<ul>
-  <% @event.attendee.each do |guest| %>
-    <li><%= guest.name %></li>
-  <% end %>
-</ul>
+<%= list_user(@event.attendee) %>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
+

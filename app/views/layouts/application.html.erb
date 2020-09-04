@@ -12,10 +12,10 @@
   <% if signed_in? %>
     <%= link_to 'events', events_path %>
     <%= link_to 'users', users_path %>
-    <%= link_to 'log out', session_destroy_path %>
+    <%= link_to 'log out', session_path(current_user['id']), method: :delete %>
   <% else %>
     <%= link_to 'sign up', new_user_path %>
-    <%= link_to 'login', session_new_path %>
+    <%= link_to 'login', new_session_path %>
   <% end %>
 </ul>
 

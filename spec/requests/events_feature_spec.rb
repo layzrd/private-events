@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe 'Events', type: :feature do
   before :each do
     User.create(username: 'recca', name: 'Rebecca Yilma')
-    visit session_new_path
+    visit sessions_new_path
     within('form') do
       fill_in 'username', with: 'recca'
     end

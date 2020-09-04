@@ -1,5 +1,5 @@
 <h1>Login</h1>
-<%= form_with method: 'post', url: session_create_path, local: true do |form| %>
+<%= form_with method: 'post', url: sessions_path, local: true do |form| %>
   <%= form.label :username %>
   <%= form.text_field :username %>
   <%= form.submit 'Sign in' %>

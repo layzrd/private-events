@@ -15,7 +15,7 @@ class ApplicationController < ActionController::Base
     return if signed_in?
 
     flash[:error] = 'Please login first'
-    redirect_to session_new_path
+    redirect_to sessions_new_path
   end
 
   helper_method :current_user, :signed_in?, :authenticated?
