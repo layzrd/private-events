@@ -5,7 +5,7 @@ module ApplicationHelper
         concat content_tag(:p, item, class: cls)
       end
     else
-      content_tag(:p, data, class: cls) if data
+      content_tag(:p, data, class: cls)
     end
   end
 
@@ -23,14 +23,13 @@ module ApplicationHelper
   end
 
   def conditional_link(cond, link)
-    if cond
-      if link.is_a?(Array)
+    return unless cond
+    if link.is_a?(Array)
         link.each do |l|
-          concat link_to l[:lbl], l[:path], method: l[:mtd]
+            concat link_to l[:lbl], l[:path], method: l[:mtd]
         end
-      else
+    else
         link_to link[:lbl], link[:path]
-      end
     end
   end
 
@@ -55,13 +54,12 @@ module ApplicationHelper
     current_user.name if signed_in?
   end
 
-  def error_view errors
-    if errors.any?
-      concat content_tag(:div,
+  def error_view(errors)
+    return unless errors.any?
+    concat content_tag(:div,
                          content_tag(:h2,
-                                     "#{pluralize(errors.count, "error")}
-                                    prohibited this user from being saved:", class: ""))
-      conditional_view(errors.full_messages)
-    end
+                                     "#{pluralize(errors.count, 'error')}
+                                    prohibited this user from being saved:"))
+    conditional_view(errors.full_messages)
   end
 end
