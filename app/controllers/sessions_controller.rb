@@ -4,7 +4,7 @@ class SessionsController < ApplicationController
   def create
     unless params[:username].present?
       flash[:alert] = 'Please provide username.'
-      redirect_to sessions_new_path
+      redirect_to new_session_path
       return
     end
     @user = User.find_by(username: params[:username])
@@ -14,7 +14,7 @@ class SessionsController < ApplicationController
       redirect_to users_path
     else
       flash[:alert] = 'the given username is not exist.'
-      redirect_to sessions_new_path
+      redirect_to new_session_path
     end
   end
 

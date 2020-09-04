@@ -8,24 +8,12 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
 </head>
 <body>
-<ul>
-  <% if signed_in? %>
-    <%= link_to 'events', events_path %>
-    <%= link_to 'users', users_path %>
-    <%= link_to 'log out', session_path(current_user['id']), method: :delete %>
-  <% else %>
-    <%= link_to 'sign up', new_user_path %>
-    <%= link_to 'login', new_session_path %>
-  <% end %>
-</ul>
 
-<% if flash[:alert] %>
-  <p class="alert flash"><%= flash[:alert] %></p>
-<% end %>
+<%= authorized_links! %>
 
-<% if flash[:notice] %>
-  <p class="info flash"><%= flash[:notice] %></p>
-<% end %>
+<%= conditional_view(flash[:alert], cls: 'alert flash') %>
+
+<%= conditional_view(flash[:notice], cls: 'info flash') %>
 
 <%= yield %>
 </body>
