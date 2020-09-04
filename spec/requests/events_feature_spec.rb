@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Events', type: :feature do
+RSpec.describe 'Event Feature', type: :feature do
   before :each do
     User.create(username: 'recca', name: 'Rebecca Yilma')
     visit sessions_new_path

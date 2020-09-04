@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe SessionController, type: :system do
+RSpec.describe 'SessionsController', type: :system do
   context 'GET /session/new' do
     it "should display 'Login' text" do
       visit sessions_new_path

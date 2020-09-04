@@ -1,5 +1,6 @@
 module ApplicationHelper
   def conditional_view(data, cls: '')
+    return unless data
     if data.is_a?(Array)
       data.each do |item|
         concat content_tag(:p, item, class: cls)
