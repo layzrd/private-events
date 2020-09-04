@@ -18,29 +18,11 @@
 
     <li>
       <h2>Upcoming</h2>
-      <ol>
-        <% @upcoming_events.each do |event| %>
-        <li> 
-          <%= event[2] %>
-          <b> Location: </b> <%= event[1] %>  
-          <b> Hosted by:</b> <%= event[0] %>
-          <b> Date: </b> <%= event[3] %> 
-        </li>
-        <% end %>
-      </ol>
+      <%= list_array_event(@upcoming_events) %>
     </li>
     <li>
       <h2>Past</h2>
-      <ol>
-        <% @previously_attended_events.each do |event| %>
-        <li> 
-          <%= event[2] %>
-          <b> Location: </b> <%= event[1] %>  
-          <b> Hosted by:</b> <%= event[0] %>
-          <b> Date: </b> <%= event[3] %> 
-        </li>
-        <% end %>
-      </ol>
+      <%= list_array_event(@previously_attended_events) %>
     </li>
   </ul>
 </ul>

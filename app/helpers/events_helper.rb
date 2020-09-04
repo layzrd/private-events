@@ -7,4 +7,12 @@ module EventsHelper
       end
     end
   end
+
+  def list_array_event(obj)
+    content_tag(:ol, class: 'bg-gray-200') do
+      obj.each do |event|
+        concat content_tag(:li, "#{event[2]} Location: #{event[1]}  Hosted by: #{event[0]} Date: #{event[3]}")
+      end
+    end
+  end
 end

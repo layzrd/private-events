@@ -1,6 +1,7 @@
 class EventsController < ApplicationController
   helper EventsHelper
   before_action :authenticated?
+  before_action :set_user_options, only: %i[new edit]
   before_action :set_event, only: %i[show edit update destroy]
 
   # GET /events
@@ -18,7 +19,6 @@ class EventsController < ApplicationController
 
   # GET /events/new
   def new
-    @user_options = User.all.map { |u| [u.name, u.id] }
     @event = Event.new
   end
 
@@ -70,6 +70,10 @@ class EventsController < ApplicationController
   # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:id])
+  end
+
+  def set_user_options
+    @user_options = User.all.map { |u| [u.name, u.id] }
   end
 
   # Only allow a list of trusted parameters through.
