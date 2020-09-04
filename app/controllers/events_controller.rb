@@ -9,8 +9,8 @@ class EventsController < ApplicationController
   def index
     @future_events = Event.upcoming
     @past_events = Event.past
-    @my_past = Event.my_past(current_user[:id])
-    @my_upcoming = Event.my_upcoming(current_user[:id])
+    @my_past = Event.my_past(current_user.id)
+    @my_upcoming = Event.my_upcoming(current_user.id)
   end
 
   # GET /events/1

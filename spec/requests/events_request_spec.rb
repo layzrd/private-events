@@ -4,8 +4,8 @@ RSpec.describe EventsController, type: :controller do
   before :each do
     login('recca')
   end
-  context 'Events index' do
-    it 'should display the index page' do
+  context 'Events' do
+    it '#index should display the index page' do
       get :index
       expect(response).to render_template('index')
     end

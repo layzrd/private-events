@@ -1,14 +1,14 @@
 require 'rails_helper'
 
 RSpec.describe 'SessionsController', type: :system do
-  context 'GET /session/new' do
+  context 'GET /sessions/new' do
     it "should display 'Login' text" do
-      visit sessions_new_path
+      visit new_session_path
       expect(page).to have_content('Login')
     end
 
     it 'should reject sign in' do
-      visit sessions_new_path
+      visit new_session_path
       within('form') do
         fill_in 'username', with: 'unknown'
       end
