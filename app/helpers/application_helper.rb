@@ -1,6 +1,7 @@
 module ApplicationHelper
   def conditional_view(data, cls: '')
     return unless data
+
     if data.is_a?(Array)
       data.each do |item|
         concat content_tag(:p, item, class: cls)
@@ -28,21 +29,21 @@ module ApplicationHelper
 
     if link.is_a?(Array)
       link.each do |l|
-        concat link_to l[:lbl], l[:path], method: l[:mtd]
+        concat link_to l[:lbl], l[:path], method: l[:mtd], class: 'link'
       end
     else
-      link_to link[:lbl], link[:path]
+      link_to link[:lbl], link[:path], class: 'link'
     end
   end
 
   def authorized_links!
     if signed_in?
-      concat link_to 'events', events_path
-      concat link_to 'users', users_path
-      link_to 'log out', session_path(current_user), method: :delete
+      concat link_to 'events', events_path, class: 'link'
+      concat link_to 'users', users_path, class: 'link'
+      link_to 'log out', session_path(current_user), method: :delete, class: 'link'
     else
-      concat link_to 'sign up', new_user_path
-      link_to 'log in', new_session_path
+      concat link_to 'sign up', new_user_path, class: 'link'
+      link_to 'log in', new_session_path, class: 'link'
     end
   end
 
